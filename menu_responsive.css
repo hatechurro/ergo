@@ -1,0 +1,14 @@
+
+
+@media (min-width: 768px) {
+    .menu-responsive{
+        display: none;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-bg{
+        display: none;
+    }
+}
