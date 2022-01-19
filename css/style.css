@@ -8,7 +8,6 @@
 html {
     box-sizing: border-box;
     min-height: 100%;
-    scroll-snap-type: y mandatory;
 }
 *, *:before, *:after {
     box-sizing: inherit;
