@@ -8,20 +8,28 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Krub:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="css/menu_responsive.css">
 </head>
 <body>
-
-
-    <div class="nav-bg">
-        <nav class="navegacion contenedor ">
-            <a href="#">Inicio</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Servicios</a>
-            <a href="#">Contacto</a>
+    <header>
+        <a href="#" class="brand">
+            <img src="img/logo.png">
+        </a>
+        <nav class="menu">
+          <div class="btn">
+            <i class="fas fa-times close-btn"></i>
+          </div>
+          <ul>
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#">Servicios</a></li>
+              <li><a href="#">Contacto</a></li>
+          </ul>
         </nav>
-    </div>
-    
+        <div class="btn">
+          <i class="fas fa-bars menu-btn"></i>
+        </div>
+      </header>
     <div class="hero">
         <div class="contenido-hero">
             <h2>Servicios técnicos empresariales</h2>      
@@ -118,7 +126,36 @@
     </div>
 
     <footer class="footer">
-       
+    
     </footer>  
+    <script type="text/javascript">
+        //javascript for navigation bar effect on scroll
+        window.addEventListener("scroll", function(){
+          var header = document.querySelector("header");
+          header.classList.toggle('down', window.scrollY > 0);
+    
+            //change logo
+            var logo = document.querySelector(".brand img");
+            if (window.scrollY>0) {
+                logo.setAttribute('src', 'img/logo.png');
+            }else{
+                logo.setAttribute('src', 'img/logo.png');
+            }
+    
+        });
+    
+        //javascript for responsive navigation sidebar menu
+        var menu = document.querySelector('.menu');
+        var menuBtn = document.querySelector('.menu-btn');
+        var closeBtn = document.querySelector('.close-btn');
+    
+        menuBtn.addEventListener("click", () => {
+          menu.classList.add('active');
+        });
+    
+        closeBtn.addEventListener("click", () => {
+          menu.classList.remove('active');
+        });
+        </script>
 </body>
 </html>
